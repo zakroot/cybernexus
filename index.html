@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberNexus 2050 — Securing the Future</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ PARTICLE CANVAS ═══════════════════════════════ -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ═══════════════════════════════ SCAN LINE OVERLAY ═══════════════════════════════ -->
+  <div class="scanlines"></div>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="logo.png" alt="CyberNexus" class="logo-img">
+        <span class="logo-text">CYBER<span class="accent">NEXUS</span></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home"   class="nav-link" data-key="nav_home">Home</a></li>
+        <li><a href="#about"  class="nav-link" data-key="nav_about">About</a></li>
+        <li><a href="#courses"class="nav-link" data-key="nav_courses">Courses</a></li>
+        <li><a href="#contact"class="nav-link" data-key="nav_contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="ar">AR</button>
+        </div>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════ HERO SECTION ═══════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-grid-bg"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge" data-key="hero_badge">[ SYSTEM ONLINE — 2050 ]</div>
+      <h1 class="hero-title">
+        <span class="line1" data-key="hero_title1">SECURE THE</span>
+        <span class="line2 glitch" data-text="FUTURE" data-key="hero_title2">FUTURE</span>
+      </h1>
+      <p class="hero-slogan" data-key="hero_slogan">Securing the Future, One Mind at a Time</p>
+      <p class="hero-desc" data-key="hero_desc">
+        The world's most advanced cybersecurity education platform. 
+        Train like elite hackers defend like digital guardians.
+      </p>
+      <div class="hero-actions">
+        <a href="#courses" class="btn-primary" data-key="hero_cta1">
+          <span class="btn-icon">▶</span> Start Training
+        </a>
+        <a href="#about" class="btn-outline" data-key="hero_cta2">
+          Learn More
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="12500">0</span>
+          <span class="stat-label" data-key="stat1">Students Trained</span>
+        </div>
+        <div class="stat-divider">|</div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="48">0</span>
+          <span class="stat-label" data-key="stat2">Expert Courses</span>
+        </div>
+        <div class="stat-divider">|</div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="99">0</span>
+          <span class="stat-label" data-key="stat3">% Success Rate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating cyber icons -->
+    <div class="hero-visual">
+      <div class="orbit-ring ring1">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit-ring ring2">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit-ring ring3">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="core-icon">🛡</div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span data-key="scroll_hint">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ABOUT SECTION ═══════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="section-container">
+      <div class="section-label" data-key="about_label">[ ABOUT US ]</div>
+      <h2 class="section-title" data-key="about_title">What is CyberNexus?</h2>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-key="about_p1">
+            CyberNexus is a next-generation cybersecurity academy built for the digital warriors of tomorrow.
+            We combine cutting-edge curriculum with immersive, hands-on training environments.
+          </p>
+          <p data-key="about_p2">
+            Our programs are designed by world-class security engineers, ethical hackers, and defense 
+            specialists who have protected critical infrastructure for the world's top organizations.
+          </p>
+          <p data-key="about_p3">
+            Whether you're a beginner or an advanced professional, CyberNexus has the path to 
+            transform you into a guardian of the digital frontier.
+          </p>
+          <a href="#courses" class="btn-primary" data-key="about_cta">Explore Courses</a>
+        </div>
+
+        <div class="about-features">
+          <div class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <div class="feature-info">
+              <h3 data-key="feat1_title">Ethical Hacking</h3>
+              <p data-key="feat1_desc">Learn offensive security techniques used by real professionals</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <div class="feature-info">
+              <h3 data-key="feat2_title">Network Defense</h3>
+              <p data-key="feat2_desc">Protect infrastructure against advanced persistent threats</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <div class="feature-info">
+              <h3 data-key="feat3_title">AI Security</h3>
+              <p data-key="feat3_desc">Secure AI systems against adversarial attacks and data poisoning</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔬</div>
+            <div class="feature-info">
+              <h3 data-key="feat4_title">Digital Forensics</h3>
+              <p data-key="feat4_desc">Investigate cyber incidents and recover critical digital evidence</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ COURSES SECTION ═══════════════════════════════ -->
+  <section class="courses" id="courses">
+    <div class="section-container">
+      <div class="section-label" data-key="courses_label">[ TRAINING MODULES ]</div>
+      <h2 class="section-title" data-key="courses_title">Select Your Path</h2>
+      <p class="section-subtitle" data-key="courses_subtitle">
+        Choose from our elite cybersecurity programs, each crafted to build real-world skills.
+      </p>
+
+      <div class="courses-grid">
+
+        <!-- Course 1 -->
+        <div class="course-card" data-level="beginner">
+          <div class="course-header">
+            <span class="course-icon">🎯</span>
+            <span class="course-level beginner" data-key="level_beginner">Beginner</span>
+          </div>
+          <h3 class="course-name" data-key="course1_name">Cyber Foundations</h3>
+          <p class="course-desc" data-key="course1_desc">
+            Master the fundamentals: networking, protocols, operating systems, and basic threat landscapes.
+          </p>
+          <ul class="course-topics">
+            <li data-key="c1t1">Network Fundamentals</li>
+            <li data-key="c1t2">Linux & Windows Security</li>
+            <li data-key="c1t3">Cryptography Basics</li>
+          </ul>
+          <div class="course-meta">
+            <span class="meta-item">⏱ <span data-key="c1_duration">8 Weeks</span></span>
+            <span class="meta-item">📡 <span data-key="c1_mode">Online</span></span>
+          </div>
+          <button class="course-btn" data-key="enroll_btn">Enroll Now</button>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card featured" data-level="intermediate">
+          <div class="featured-badge" data-key="featured_badge">⚡ Most Popular</div>
+          <div class="course-header">
+            <span class="course-icon">💀</span>
+            <span class="course-level intermediate" data-key="level_intermediate">Intermediate</span>
+          </div>
+          <h3 class="course-name" data-key="course2_name">Ethical Hacking Pro</h3>
+          <p class="course-desc" data-key="course2_desc">
+            Penetration testing, vulnerability assessment, and exploit development in live lab environments.
+          </p>
+          <ul class="course-topics">
+            <li data-key="c2t1">Penetration Testing</li>
+            <li data-key="c2t2">Web App Exploitation</li>
+            <li data-key="c2t3">Malware Analysis</li>
+          </ul>
+          <div class="course-meta">
+            <span class="meta-item">⏱ <span data-key="c2_duration">12 Weeks</span></span>
+            <span class="meta-item">📡 <span data-key="c2_mode">Hybrid</span></span>
+          </div>
+          <button class="course-btn" data-key="enroll_btn">Enroll Now</button>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card" data-level="advanced">
+          <div class="course-header">
+            <span class="course-icon">⚡</span>
+            <span class="course-level advanced" data-key="level_advanced">Advanced</span>
+          </div>
+          <h3 class="course-name" data-key="course3_name">Red Team Operations</h3>
+          <p class="course-desc" data-key="course3_desc">
+            Advanced adversary simulation, APT tactics, and enterprise-level red team engagements.
+          </p>
+          <ul class="course-topics">
+            <li data-key="c3t1">APT Simulation</li>
+            <li data-key="c3t2">C2 Infrastructure</li>
+            <li data-key="c3t3">Zero-Day Research</li>
+          </ul>
+          <div class="course-meta">
+            <span class="meta-item">⏱ <span data-key="c3_duration">16 Weeks</span></span>
+            <span class="meta-item">📡 <span data-key="c3_mode">In-Person</span></span>
+          </div>
+          <button class="course-btn" data-key="enroll_btn">Enroll Now</button>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="course-card" data-level="intermediate">
+          <div class="course-header">
+            <span class="course-icon">🛡</span>
+            <span class="course-level intermediate" data-key="level_intermediate">Intermediate</span>
+          </div>
+          <h3 class="course-name" data-key="course4_name">Blue Team Defense</h3>
+          <p class="course-desc" data-key="course4_desc">
+            SOC operations, incident response, SIEM management, and threat hunting in enterprise environments.
+          </p>
+          <ul class="course-topics">
+            <li data-key="c4t1">SIEM & Log Analysis</li>
+            <li data-key="c4t2">Incident Response</li>
+            <li data-key="c4t3">Threat Intelligence</li>
+          </ul>
+          <div class="course-meta">
+            <span class="meta-item">⏱ <span data-key="c4_duration">10 Weeks</span></span>
+            <span class="meta-item">📡 <span data-key="c4_mode">Online</span></span>
+          </div>
+          <button class="course-btn" data-key="enroll_btn">Enroll Now</button>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="course-card" data-level="advanced">
+          <div class="course-header">
+            <span class="course-icon">🧬</span>
+            <span class="course-level advanced" data-key="level_advanced">Advanced</span>
+          </div>
+          <h3 class="course-name" data-key="course5_name">AI & Quantum Security</h3>
+          <p class="course-desc" data-key="course5_desc">
+            Protect the next generation of AI systems and quantum communication networks from emerging threats.
+          </p>
+          <ul class="course-topics">
+            <li data-key="c5t1">Adversarial ML</li>
+            <li data-key="c5t2">Post-Quantum Crypto</li>
+            <li data-key="c5t3">Neural Network Defense</li>
+          </ul>
+          <div class="course-meta">
+            <span class="meta-item">⏱ <span data-key="c5_duration">14 Weeks</span></span>
+            <span class="meta-item">📡 <span data-key="c5_mode">Online</span></span>
+          </div>
+          <button class="course-btn" data-key="enroll_btn">Enroll Now</button>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="course-card" data-level="beginner">
+          <div class="course-header">
+            <span class="course-icon">🔍</span>
+            <span class="course-level beginner" data-key="level_beginner">Beginner</span>
+          </div>
+          <h3 class="course-name" data-key="course6_name">Digital Forensics</h3>
+          <p class="course-desc" data-key="course6_desc">
+            Investigate cybercrime, recover digital evidence, and master forensic methodologies.
+          </p>
+          <ul class="course-topics">
+            <li data-key="c6t1">Evidence Collection</li>
+            <li data-key="c6t2">Memory Forensics</li>
+            <li data-key="c6t3">Forensic Reporting</li>
+          </ul>
+          <div class="course-meta">
+            <span class="meta-item">⏱ <span data-key="c6_duration">6 Weeks</span></span>
+            <span class="meta-item">📡 <span data-key="c6_mode">Online</span></span>
+          </div>
+          <button class="course-btn" data-key="enroll_btn">Enroll Now</button>
+        </div>
+
+      </div><!-- end courses-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CONTACT SECTION ═══════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="section-container">
+      <div class="section-label" data-key="contact_label">[ CONTACT ]</div>
+      <h2 class="section-title" data-key="contact_title">Initiate Connection</h2>
+      <p class="section-subtitle" data-key="contact_subtitle">
+        Send us a secure transmission. Our team will respond within 24 hours.
+      </p>
+
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <span class="ci-icon">📍</span>
+            <div>
+              <h4 data-key="ci_loc_title">Location</h4>
+              <p data-key="ci_loc">Cyber District, Neo-Algiers, 2050</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="ci-icon">📡</span>
+            <div>
+              <h4 data-key="ci_freq_title">Frequency</h4>
+              <p>contact@cybernexus.io</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="ci-icon">🕐</span>
+            <div>
+              <h4 data-key="ci_hours_title">Operation Hours</h4>
+              <p data-key="ci_hours">24 / 7 / 365</p>
+            </div>
+          </div>
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <span class="t-dot r"></span>
+              <span class="t-dot y"></span>
+              <span class="t-dot g"></span>
+              <span class="t-title">terminal@cybernexus:~</span>
+            </div>
+            <div class="terminal-body">
+              <p><span class="t-prompt">$</span> <span class="t-cmd typing-text">./connect --secure --encrypt</span></p>
+              <p class="t-out">Establishing encrypted channel...</p>
+              <p class="t-out">Connection secured. ✓</p>
+              <p class="t-out">Ready to receive your message.</p>
+              <p><span class="t-prompt">$</span> <span class="t-cursor">_</span></p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label data-key="form_name">Full Name</label>
+            <input type="text" id="f-name" placeholder="Agent_X" required />
+            <div class="form-line"></div>
+          </div>
+          <div class="form-group">
+            <label data-key="form_email">Email Address</label>
+            <input type="email" id="f-email" placeholder="agent@nexus.io" required />
+            <div class="form-line"></div>
+          </div>
+          <div class="form-group">
+            <label data-key="form_subject">Subject</label>
+            <input type="text" id="f-subject" placeholder="Mission Brief" />
+            <div class="form-line"></div>
+          </div>
+          <div class="form-group">
+            <label data-key="form_message">Message</label>
+            <textarea id="f-message" rows="5" placeholder="Transmit your message..." required></textarea>
+            <div class="form-line"></div>
+          </div>
+          <button type="submit" class="btn-primary form-submit" data-key="form_submit">
+            <span class="btn-icon">📡</span> Transmit Message
+          </button>
+          <div class="form-success" id="form-success" data-key="form_success_msg">
+            ✓ Message transmitted successfully. Standing by for response.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">CYBER<span class="accent">NEXUS</span></span>
+        <p data-key="footer_tagline">Securing the Future, One Mind at a Time</p>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 data-key="footer_nav">Navigation</h4>
+        <ul>
+          <li><a href="#home" data-key="nav_home">Home</a></li>
+          <li><a href="#about" data-key="nav_about">About</a></li>
+          <li><a href="#courses" data-key="nav_courses">Courses</a></li>
+          <li><a href="#contact" data-key="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 data-key="footer_programs">Programs</h4>
+        <ul>
+          <li><a href="#courses" data-key="course1_name">Cyber Foundations</a></li>
+          <li><a href="#courses" data-key="course2_name">Ethical Hacking Pro</a></li>
+          <li><a href="#courses" data-key="course3_name">Red Team Operations</a></li>
+          <li><a href="#courses" data-key="course5_name">AI & Quantum Security</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media Links -->
+          <div class="social-connect">
+            <span class="social-label" data-i18n="social_follow">Follow Us</span>
+            <div class="social-links">
+
+              <!-- Facebook -->
+              <a href="https://facebook.com/cybernex" target="_blank" rel="noopener noreferrer"
+                 class="social-link" data-platform="facebook" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.273h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                </svg>
+                <span class="social-tooltip">Facebook</span>
+              </a>
+
+              <!-- Telegram -->
+              <a href="https://t.me/cybernex" target="_blank" rel="noopener noreferrer"
+                 class="social-link" data-platform="telegram" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.944 0A12 12 0 1 0 24 12 12.013 12.013 0 0 0 11.944 0zM18.65 7.64l-2.04 9.607c-.148.672-.54.836-1.094.52l-3.02-2.226-1.458 1.403c-.162.162-.298.298-.61.298l.218-3.074 5.595-5.055c.243-.215-.053-.335-.376-.12L7.07 14.07l-2.97-.927c-.648-.2-.66-.648.136-.96l11.59-4.47c.54-.195 1.012.12.824.927z"/>
+                </svg>
+                <span class="social-tooltip">Telegram</span>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://instagram.com/cybernex" target="_blank" rel="noopener noreferrer"
+                 class="social-link" data-platform="instagram" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+                <span class="social-tooltip">Instagram</span>
+              </a>
+
+            </div>
+          </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-line"></div>
+      <div class="footer-bottom-content">
+        <p class="footer-copy" data-key="footer_copy">© 2050 CyberNexus. All rights reserved.</p>
+        <p class="footer-credit">Created by <span class="accent">Hideb Sirine</span> &amp; <span class="accent">Meziane Raya</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
