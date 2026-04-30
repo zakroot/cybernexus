@@ -11,6 +11,227 @@
 </head>
 <body>
 
+  <!-- ═══════════════════════════════ LOADING SCREEN ═══════════════════════════════ -->
+  <div id="loader-screen">
+    <div class="loader-bg"></div>
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="logo.png" alt="CyberNexus" class="loader-logo" />
+        <div class="loader-hex-ring"></div>
+        <div class="loader-hex-ring ring-2"></div>
+      </div>
+      <div class="loader-title">CYBER<span class="loader-accent">NEXUS</span></div>
+      <div class="loader-subtitle">2050</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-track">
+          <div class="loader-bar-fill" id="loader-bar"></div>
+        </div>
+        <div class="loader-percent" id="loader-percent">0%</div>
+      </div>
+      <div class="loader-status" id="loader-status">Initializing secure connection...</div>
+      <div class="loader-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="loader-scanlines"></div>
+    <div class="loader-corner tl"></div>
+    <div class="loader-corner tr"></div>
+    <div class="loader-corner bl"></div>
+    <div class="loader-corner br"></div>
+  </div>
+
+  <style>
+    /* ── LOADER SCREEN ── */
+    #loader-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #loader-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .loader-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,180,255,0.07) 0%, transparent 70%),
+        repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(0,180,255,0.03) 60px, rgba(0,180,255,0.03) 61px),
+        repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(0,180,255,0.03) 60px, rgba(0,180,255,0.03) 61px);
+    }
+    .loader-scanlines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 2px,
+        rgba(0,0,0,0.15) 2px,
+        rgba(0,0,0,0.15) 4px
+      );
+      pointer-events: none;
+    }
+    /* corner brackets */
+    .loader-corner {
+      position: absolute;
+      width: 28px; height: 28px;
+      border-color: #00b4ff;
+      border-style: solid;
+      opacity: 0.6;
+    }
+    .loader-corner.tl { top:18px; left:18px;  border-width:2px 0 0 2px; }
+    .loader-corner.tr { top:18px; right:18px; border-width:2px 2px 0 0; }
+    .loader-corner.bl { bottom:18px; left:18px;  border-width:0 0 2px 2px; }
+    .loader-corner.br { bottom:18px; right:18px; border-width:0 2px 2px 0; }
+
+    .loader-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* logo + spinning rings */
+    .loader-logo-wrap {
+      position: relative;
+      width: 140px; height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .loader-logo {
+      width: 90px; height: 90px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px #00b4ff);
+      animation: loader-pulse 2s ease-in-out infinite;
+    }
+    .loader-hex-ring {
+      position: absolute;
+      inset: 0;
+      border: 2px solid rgba(0,180,255,0.4);
+      border-radius: 50%;
+      animation: loader-spin 3s linear infinite;
+      box-shadow: 0 0 10px rgba(0,180,255,0.3);
+    }
+    .loader-hex-ring.ring-2 {
+      inset: 10px;
+      border-color: rgba(0,180,255,0.2);
+      animation: loader-spin 5s linear infinite reverse;
+    }
+    @keyframes loader-spin  { to { transform: rotate(360deg); } }
+    @keyframes loader-pulse { 0%,100%{filter:drop-shadow(0 0 10px #00b4ff)} 50%{filter:drop-shadow(0 0 24px #00cfff)} }
+
+    /* title */
+    .loader-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(0,180,255,0.5);
+    }
+    .loader-accent { color: #00b4ff; }
+    .loader-subtitle {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.4em;
+      color: #00b4ff;
+      opacity: 0.8;
+      margin-top: -10px;
+    }
+
+    /* progress bar */
+    .loader-bar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      width: 260px;
+    }
+    .loader-bar-track {
+      width: 100%;
+      height: 4px;
+      background: rgba(0,180,255,0.15);
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid rgba(0,180,255,0.2);
+    }
+    .loader-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #0077cc, #00cfff);
+      border-radius: 2px;
+      box-shadow: 0 0 8px #00b4ff;
+      transition: width 0.15s ease;
+    }
+    .loader-percent {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: #00b4ff;
+      letter-spacing: 0.1em;
+    }
+
+    /* status text */
+    .loader-status {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: rgba(0,180,255,0.7);
+      letter-spacing: 0.05em;
+      min-height: 1.2em;
+    }
+
+    /* animated dots */
+    .loader-dots {
+      display: flex; gap: 6px;
+    }
+    .loader-dots span {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #00b4ff;
+      animation: loader-blink 1.2s ease-in-out infinite;
+    }
+    .loader-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes loader-blink { 0%,80%,100%{opacity:0.2} 40%{opacity:1} }
+  </style>
+
+  <script>
+    (function() {
+      const screen   = document.getElementById('loader-screen');
+      const bar      = document.getElementById('loader-bar');
+      const pct      = document.getElementById('loader-percent');
+      const status   = document.getElementById('loader-status');
+      const messages = [
+        'Initializing secure connection...',
+        'Loading encrypted protocols...',
+        'Authenticating neural matrix...',
+        'Deploying firewall layers...',
+        'Calibrating threat vectors...',
+        'System online. Welcome, Agent.'
+      ];
+      let progress = 0;
+      let msgIndex = 0;
+      const interval = setInterval(() => {
+        progress += Math.random() * 14 + 4;
+        if (progress > 100) progress = 100;
+        bar.style.width = progress + '%';
+        pct.textContent = Math.floor(progress) + '%';
+        const mi = Math.min(Math.floor(progress / 17), messages.length - 1);
+        if (mi !== msgIndex) { msgIndex = mi; status.textContent = messages[msgIndex]; }
+        if (progress >= 100) {
+          clearInterval(interval);
+          status.textContent = messages[messages.length - 1];
+          setTimeout(() => { screen.classList.add('hidden'); }, 600);
+        }
+      }, 120);
+    })();
+  </script>
+
   <!-- ═══════════════════════════════ PARTICLE CANVAS ═══════════════════════════════ -->
   <canvas id="particle-canvas"></canvas>
 
