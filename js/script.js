@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
    CYBERNEXUS 2050 — script.js
-   Translations (EN / FR / AR) + All interactive features
+   Created By ResPect
 ═══════════════════════════════════════════════════════════════ */
 
 /* ─────────────────────────────────────────────────────────────
@@ -670,3 +670,38 @@ sections.forEach(s => sectionObserver.observe(s));
 ───────────────────────────────────────────────────────────────*/
 const savedLang = localStorage.getItem('cn_lang') || 'en';
 applyLanguage(savedLang);
+
+
+
+/* loadin screen */
+
+
+(function() {
+      const screen   = document.getElementById('loader-screen');
+      const bar      = document.getElementById('loader-bar');
+      const pct      = document.getElementById('loader-percent');
+      const status   = document.getElementById('loader-status');
+      const messages = [
+        'Initializing secure connection...',
+        'Loading encrypted protocols...',
+        'Authenticating neural matrix...',
+        'Deploying firewall layers...',
+        'Calibrating threat vectors...',
+        'System online. Welcome, Agent.'
+      ];
+      let progress = 0;
+      let msgIndex = 0;
+      const interval = setInterval(() => {
+        progress += Math.random() * 14 + 4;
+        if (progress > 100) progress = 100;
+        bar.style.width = progress + '%';
+        pct.textContent = Math.floor(progress) + '%';
+        const mi = Math.min(Math.floor(progress / 17), messages.length - 1);
+        if (mi !== msgIndex) { msgIndex = mi; status.textContent = messages[msgIndex]; }
+        if (progress >= 100) {
+          clearInterval(interval);
+          status.textContent = messages[messages.length - 1];
+          setTimeout(() => { screen.classList.add('hidden'); }, 600);
+        }
+      }, 120);
+    })();
